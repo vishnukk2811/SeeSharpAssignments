@@ -1,6 +1,6 @@
 2) using System;
 
-namespace VsHelloworld
+namespace Helloworld
 {
     class holiday
     {
