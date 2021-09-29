@@ -1,0 +1,88 @@
+2) using System;
+
+namespace VsHelloworld
+{
+    class holiday
+    {
+        static void Main1()
+        {
+            Console.WriteLine("enter the day");
+            string day = Console.ReadLine();
+            int n = int.Parse(day);
+            if(n==0 || n > 7)
+            {
+                Console.WriteLine("invalid day");
+            }else if (n <= 5)
+            {
+                Console.WriteLine("working day");
+            }else
+                Console.WriteLine("holiday");
+        }
+    }
+}
+
+7)using System;
+
+namespace primenumbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] givenArray = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97 };
+            int biggestElement = 0;
+
+            for (int i =0; i < givenArray.Length; i++)
+            {
+                if (givenArray[i] > biggestElement  )
+                {
+                    biggestElement = givenArray[i];
+                    
+                }
+            }
+            Console.WriteLine("the biggest prime number is: \n" +biggestElement.ToString());
+        }
+    }
+}
+
+8)using System;
+
+namespace assigmentnumbereight
+{
+    class Program
+    {
+        static readonly int limit = 1000000;
+		static int[] position = new int[limit + 1];
+
+		
+		
+		static void sieve()
+		{
+			
+			position[0] = -1;
+			position[1] = -1;
+
+			
+			int pos = 0;
+			for (int i = 2; i <= limit; i++)
+			{
+				if (position[i] == 0)
+				{
+
+					
+					position[i] = ++pos;
+					for (int j = i * 2; j <= limit; j += i)
+						position[j] = -1;
+				}
+			}
+		}
+
+		
+		public static void Main(String[] args)
+		{
+			sieve();
+
+			int n = 11;
+			Console.Write(position[n]);
+		}
+	}
